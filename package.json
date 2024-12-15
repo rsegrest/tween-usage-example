@@ -1,5 +1,5 @@
 {
-  "name": "motion-and-tween",
+  "name": "tween-example",
   "private": true,
   "version": "0.0.1",
   "type": "module",
@@ -32,7 +32,7 @@
     "webpack": "^5.97.1",
     "webpack-cli": "^5.1.4"
   },
-  "description": "My webpack project",
+  "description": "Motion & Tween Example",
   "dependencies": {
     "@types/p5": "^1.7.6",
     "html-webpack-plugin": "^5.6.3",

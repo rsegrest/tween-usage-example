@@ -30,7 +30,7 @@ import {
   EaseInOutSinusoidalTween,
   EaseInSinusoidalTween,
   EaseOutSinusoidalTween,
-} from "motion-and-tween";
+} from "motion-and-tween/dist/tween/sinusoidal";
 // import { EaseInCircularTween } from "./tween/circular";
 
 class Rectangle {
