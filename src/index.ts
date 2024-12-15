@@ -1,6 +1,6 @@
 import p5 from "p5";
 // import LinearTween from "motion-and-tween";
-import Tween, { TweenChangeProps } from "motion-and-tween/dist/tween/Tween";
+import Tween, { TweenChangeProps } from "motion-and-tween/dist/tween/Tween.js";
 // import {
 //   EaseInCircularTween,
 //   EaseInOutCircularTween,
@@ -30,7 +30,7 @@ import {
   EaseInOutSinusoidalTween,
   EaseInSinusoidalTween,
   EaseOutSinusoidalTween,
-} from "motion-and-tween/dist/tween/sinusoidal";
+} from "motion-and-tween";
 // import { EaseInCircularTween } from "./tween/circular";
 
 class Rectangle {
