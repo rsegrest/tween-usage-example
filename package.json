@@ -1,0 +1,44 @@
+{
+  "name": "motion-and-tween",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "start": "tsc --watch; webpack serve ./dist/index.html",
+    "build": "tsc --watch; webpack --mode=development serve",
+    "preview": "vite preview",
+    "watch": "tsc --watch; webpack --watch",
+    "test": "tsc; cross-env NODE_OPTIONS=--experimental-vm-modules npx jest --config ./jest.config.ts"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/preset-env": "^7.26.0",
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.10.2",
+    "babel-jest": "^29.7.0",
+    "cross-env": "^7.0.3",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "ts-jest": "^29.2.5",
+    "ts-loader": "^9.5.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.1",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^5.1.4"
+  },
+  "description": "My webpack project",
+  "dependencies": {
+    "@types/p5": "^1.7.6",
+    "html-webpack-plugin": "^5.6.3",
+    "mini-css-extract-plugin": "^2.9.2",
+    "motion-and-tween": "^0.0.3",
+    "p5": "^1.11.2",
+    "webpack-dev-server": "^5.2.0"
+  }
+}
