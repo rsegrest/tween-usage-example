@@ -1,10 +1,18 @@
+
 export default {
   preset: "ts-jest",
   testEnvironment: "node",
-  transform: {
-    "^.+\\.ts?$": "ts-jest",
-    "^.+\\.js?$": "babel-jest",
+  extensionsToTreatAsEsm: ['.ts'],
+  moduleNameMapper: {
+    '^(\\.{1,2}/.*)\\.js$': '$1',
   },
-  transformIgnorePatterns: ["<rootDir>/node_modules/", "<rootDir>/dist/src/__tests__/"],
-  fakeTimers: { enableGlobally: true },
+  transform: {
+    "^.+\\.tsx?$": [
+      "ts-jest",
+      {
+        useESM: true,
+      },
+    ],
+  },
+  transformIgnorePatterns: ["<rootDir>/node_modules/"],
 };
