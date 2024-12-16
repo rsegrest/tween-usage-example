@@ -1,6 +1,8 @@
 import p5 from "p5";
-// import LinearTween from "motion-and-tween";
-import Tween, { TweenChangeProps } from "motion-and-tween/dist/tween/Tween.js";
+// import LinearTween from "motion-and-tween/tween";
+import { TweenChangeProps } from "motion-and-tween/tween";
+// import { Tween } from "motion-and-tween/tween";
+// import TweenChangeProps from "motion-and-tween/tween";
 // import {
 //   EaseInCircularTween,
 //   EaseInOutCircularTween,
@@ -26,11 +28,7 @@ import Tween, { TweenChangeProps } from "motion-and-tween/dist/tween/Tween.js";
 //   EaseInQuinticTween,
 //   EaseOutQuinticTween,
 // } from "./tween/quintic";
-import {
-  EaseInOutSinusoidalTween,
-  EaseInSinusoidalTween,
-  EaseOutSinusoidalTween,
-} from "motion-and-tween";
+import { SinusoidalTween } from "motion-and-tween/tween";
 // import { EaseInCircularTween } from "./tween/circular";
 
 class Rectangle {
@@ -70,9 +68,9 @@ const sketch = (s: p5) => {
   // let easeOutQuintic: EaseOutQuinticTween
   // let easeInOutQuintic: EaseInOutQuinticTween;
 
-  let easeInSinusoidalTween: EaseInSinusoidalTween;
-  let easeOutSinusoidalTween: EaseOutSinusoidalTween;
-  let easeInOutSinusoidalTween: EaseInOutSinusoidalTween;
+  let easeInSinusoidalTween: SinusoidalTween.EaseIn;
+  let easeOutSinusoidalTween: SinusoidalTween.EaseOut;
+  let easeInOutSinusoidalTween: SinusoidalTween.EaseInOut;
 
   let tp1: TweenChangeProps;
   let tp2: TweenChangeProps;
@@ -127,9 +125,9 @@ const sketch = (s: p5) => {
     // easeOutQuintic = new EaseOutQuinticTween(tp2);
     // easeInOutQuintic = new EaseInOutQuinticTween(tp3);
 
-    easeInSinusoidalTween = new EaseInSinusoidalTween(tp1);
-    easeOutSinusoidalTween = new EaseOutSinusoidalTween(tp2);
-    easeInOutSinusoidalTween = new EaseInOutSinusoidalTween(tp3);
+    easeInSinusoidalTween = new SinusoidalTween.EaseIn(tp1);
+    easeOutSinusoidalTween = new SinusoidalTween.EaseOut(tp2);
+    easeInOutSinusoidalTween = new SinusoidalTween.EaseInOut(tp3);
   };
 
   s.draw = () => {
