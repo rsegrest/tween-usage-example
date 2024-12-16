@@ -38,7 +38,7 @@
     "@types/p5": "^1.7.6",
     "html-webpack-plugin": "^5.6.3",
     "mini-css-extract-plugin": "^2.9.2",
-    "motion-and-tween": "0.0.7",
+    "motion-and-tween": "0.0.11",
     "p5": "^1.11.2",
     "webpack-dev-server": "^5.2.0"
   }

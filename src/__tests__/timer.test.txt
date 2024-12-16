@@ -1,4 +1,4 @@
-import RealWorldTimer from "../timing/RealWorldTimer";
+import { RealWorldTimer } from "motion-and-tween/timing";
 
 describe("Timer", () => {
     it("should test the timer", () => {

@@ -1,43 +1,16 @@
-import { MotionProps } from "../motion/Motion";
-import { TweenChangeProps } from "../tween/Tween";
-import LinearTween from "../tween/linear/LinearTween";
+import { MotionProps } from "motion-and-tween/motion";
+import { TweenChangeProps } from "motion-and-tween/tween";
 import {
-    EaseInCircularTween,
-    EaseOutCircularTween,
-    EaseInOutCircularTween,
-} from "../tween/circular/";
-import {
-    EaseInCubicTween,
-    EaseOutCubicTween,
-    EaseInOutCubicTween,
-} from "../tween/cubic";
-import {
-    EaseInExponentialTween,
-    EaseOutExponentialTween,
-    EaseInOutExponentialTween,
-} from "../tween/exponential";
-import {
-    EaseInQuadraticTween,
-    EaseOutQuadraticTween,
-    EaseInOutQuadraticTween,
-} from "../tween/quadratic";
-import {
-    EaseInQuarticTween,
-    EaseOutQuarticTween,
-    EaseInOutQuarticTween,
-} from "../tween/quartic";
-import {
-    EaseOutQuinticTween,
-    EaseInQuinticTween,
-    EaseInOutQuinticTween,
-} from "../tween/quintic";
-import {
-    EaseInSinusoidalTween,
-    EaseOutSinusoidalTween,
-    EaseInOutSinusoidalTween,
-} from "../tween/sinusoidal";
+    LinearTween,
+    CircularTween,
+    SinusoidalTween,
+    ExponentialTween,
+    QuadraticTween,
+    CubicTween,
+    QuarticTween,
+    QuinticTween,
+} from "motion-and-tween/tween"
 
-// Duration should be 1000 / frameRate
 describe("Tween", () => {
     class Rectangle {
         public x: number = 5;
@@ -148,8 +121,8 @@ describe("Tween", () => {
                 ...mp,
                 valueChange: 10,
             };
-            let easeInCircularTween: EaseInCircularTween =
-                new EaseInCircularTween(tp);
+            let easeInCircularTween: CircularTween.EaseIn =
+                new CircularTween.EaseIn(tp);
             expect(easeInCircularTween).toBeDefined();
             expect(easeInCircularTween.toString()).toBe(
                 'Tween[Motion[obj={"x":5,"y":10,"w":50,"h":50}, prop="x", _beginValue=5, _duration=10], funcName: EaseInCircularTween, _valueChange: 10, _finishValue: 15, isComplete: false]',
@@ -180,8 +153,8 @@ describe("Tween", () => {
                 ...mp,
                 valueChange: 10,
             };
-            let easeOutCircularTween: EaseOutCircularTween =
-                new EaseOutCircularTween(tp);
+            let easeOutCircularTween: CircularTween.EaseOut =
+                new CircularTween.EaseOut(tp);
             expect(easeOutCircularTween).toBeDefined();
             expect(easeOutCircularTween.toString()).toBe(
                 'Tween[Motion[obj={"x":5,"y":10,"w":50,"h":50}, prop="x", _beginValue=5, _duration=10], funcName: EaseOutCircularTween, _valueChange: 10, _finishValue: 15, isComplete: false]',
@@ -200,7 +173,6 @@ describe("Tween", () => {
             r = easeOutCircularTween.update({ t: 11 }) as Rectangle;
             expect(r.x).toBe(15);
         });
-        // TODO: Additional verification ?
         it("should do an ease-in-out circular tween", () => {
             let rect: Rectangle = new Rectangle();
             let mp: MotionProps = {
@@ -213,8 +185,8 @@ describe("Tween", () => {
                 ...mp,
                 valueChange: 10,
             };
-            let easeInOutCircularTween: EaseInOutCircularTween =
-                new EaseInOutCircularTween(tp);
+            let easeInOutCircularTween: CircularTween.EaseInOut =
+                new CircularTween.EaseInOut(tp);
             expect(easeInOutCircularTween).toBeDefined();
             expect(easeInOutCircularTween.toString()).toBe(
                 'Tween[Motion[obj={"x":5,"y":10,"w":50,"h":50}, prop="x", _beginValue=5, _duration=10], funcName: EaseInOutCircularTween, _valueChange: 10, _finishValue: 15, isComplete: false]',
@@ -247,7 +219,7 @@ describe("Tween", () => {
                 ...mp,
                 valueChange: 10,
             };
-            let easeInCubicTween: EaseInCubicTween = new EaseInCubicTween(tp);
+            let easeInCubicTween: CubicTween.EaseIn = new CubicTween.EaseIn(tp);
             expect(easeInCubicTween).toBeDefined();
             expect(easeInCubicTween.toString()).toBe(
                 'Tween[Motion[obj={"x":5,"y":10,"w":50,"h":50}, prop="x", _beginValue=5, _duration=10], funcName: EaseInCubicTween, _valueChange: 10, _finishValue: 15, isComplete: false]',
@@ -278,7 +250,7 @@ describe("Tween", () => {
                 ...mp,
                 valueChange: 10,
             };
-            let easeOutCubicTween: EaseOutCubicTween = new EaseOutCubicTween(
+            let easeOutCubicTween: CubicTween.EaseOut = new CubicTween.EaseOut(
                 tp,
             );
             expect(easeOutCubicTween).toBeDefined();
@@ -311,8 +283,8 @@ describe("Tween", () => {
                 ...mp,
                 valueChange: 10,
             };
-            let easeInOutCubicTween: EaseInOutCubicTween =
-                new EaseInOutCubicTween(tp);
+            let easeInOutCubicTween: CubicTween.EaseInOut =
+                new CubicTween.EaseInOut(tp);
             expect(easeInOutCubicTween).toBeDefined();
             expect(easeInOutCubicTween.toString()).toBe(
                 'Tween[Motion[obj={"x":5,"y":10,"w":50,"h":50}, prop="x", _beginValue=5, _duration=10], funcName: EaseInOutCubicTween, _valueChange: 10, _finishValue: 15, isComplete: false]',
@@ -345,8 +317,8 @@ describe("Tween", () => {
                 ...mp,
                 valueChange: 10,
             };
-            let easeInExponentialTween: EaseInExponentialTween =
-                new EaseInExponentialTween(tp);
+            let easeInExponentialTween: ExponentialTween.EaseIn =
+                new ExponentialTween.EaseIn(tp);
             expect(easeInExponentialTween).toBeDefined();
             expect(easeInExponentialTween.toString()).toBe(
                 'Tween[Motion[obj={"x":5,"y":10,"w":50,"h":50}, prop="x", _beginValue=5, _duration=10], funcName: EaseInExponentialTween, _valueChange: 10, _finishValue: 15, isComplete: false]',
@@ -384,8 +356,8 @@ describe("Tween", () => {
                 ...mp,
                 valueChange: 10,
             };
-            let easeOutExponentialTween: EaseOutExponentialTween =
-                new EaseOutExponentialTween(tp);
+            let easeOutExponentialTween: ExponentialTween.EaseOut =
+                new ExponentialTween.EaseOut(tp);
             expect(easeOutExponentialTween).toBeDefined();
             expect(easeOutExponentialTween.toString()).toBe(
                 'Tween[Motion[obj={"x":5,"y":10,"w":50,"h":50}, prop="x", _beginValue=5, _duration=10], funcName: EaseOutExponentialTween, _valueChange: 10, _finishValue: 15, isComplete: false]',
@@ -417,8 +389,8 @@ describe("Tween", () => {
                 ...mp,
                 valueChange: 10,
             };
-            let easeInOutExponentialTween: EaseInOutExponentialTween =
-                new EaseInOutExponentialTween(tp);
+            let easeInOutExponentialTween: ExponentialTween.EaseInOut =
+                new ExponentialTween.EaseInOut(tp);
             expect(easeInOutExponentialTween).toBeDefined();
             let returnedObj = easeInOutExponentialTween.getObj();
             expect(returnedObj).toBeDefined();
@@ -461,8 +433,8 @@ describe("Tween", () => {
                 ...mp,
                 valueChange: 10,
             };
-            let easeInQuadraticTween: EaseInQuadraticTween =
-                new EaseInQuadraticTween(tp);
+            let easeInQuadraticTween: QuadraticTween.EaseIn =
+                new QuadraticTween.EaseIn(tp);
             expect(easeInQuadraticTween).toBeDefined();
             let returnedObj = easeInQuadraticTween.getObj();
             expect(returnedObj).toBeDefined();
@@ -496,8 +468,8 @@ describe("Tween", () => {
                 ...mp,
                 valueChange: 10,
             };
-            let easeOutQuadraticTween: EaseOutQuadraticTween =
-                new EaseOutQuadraticTween(tp);
+            let easeOutQuadraticTween: QuadraticTween.EaseOut =
+                new QuadraticTween.EaseOut(tp);
             expect(easeOutQuadraticTween).toBeDefined();
             let returnedObj = easeOutQuadraticTween.getObj();
             expect(returnedObj).toBeDefined();
@@ -530,8 +502,8 @@ describe("Tween", () => {
                 ...mp,
                 valueChange: 10,
             };
-            let easeInOutQuadraticTween: EaseInOutQuadraticTween =
-                new EaseInOutQuadraticTween(tp);
+            let easeInOutQuadraticTween: QuadraticTween.EaseInOut =
+                new QuadraticTween.EaseInOut(tp);
             expect(easeInOutQuadraticTween).toBeDefined();
             let returnedObj = easeInOutQuadraticTween.getObj();
             expect(returnedObj).toBeDefined();
@@ -566,7 +538,7 @@ describe("Tween", () => {
                 ...mp,
                 valueChange: 10,
             };
-            let easeInQuarticTween: EaseInQuarticTween = new EaseInQuarticTween(
+            let easeInQuarticTween: QuarticTween.EaseIn = new QuarticTween.EaseIn(
                 tp,
             );
             expect(easeInQuarticTween).toBeDefined();
@@ -602,8 +574,8 @@ describe("Tween", () => {
                 ...mp,
                 valueChange: 10,
             };
-            let easeOutQuarticTween: EaseOutQuarticTween =
-                new EaseOutQuarticTween(tp);
+            let easeOutQuarticTween: QuarticTween.EaseOut =
+                new QuarticTween.EaseOut(tp);
             expect(easeOutQuarticTween).toBeDefined();
             let returnedObj = easeOutQuarticTween.getObj();
             expect(returnedObj).toBeDefined();
@@ -637,8 +609,8 @@ describe("Tween", () => {
                 ...mp,
                 valueChange: 10,
             };
-            let easeInOutQuarticTween: EaseInOutQuarticTween =
-                new EaseInOutQuarticTween(tp);
+            let easeInOutQuarticTween: QuarticTween.EaseInOut =
+                new QuarticTween.EaseInOut(tp);
             expect(easeInOutQuarticTween).toBeDefined();
             let returnedObj = easeInOutQuarticTween.getObj();
             expect(returnedObj).toBeDefined();
@@ -673,7 +645,7 @@ describe("Tween", () => {
                 ...mp,
                 valueChange: 10,
             };
-            let easeInQuinticTween: EaseInQuinticTween = new EaseInQuinticTween(
+            let easeInQuinticTween: QuinticTween.EaseIn = new QuinticTween.EaseIn(
                 tp,
             );
             expect(easeInQuinticTween).toBeDefined();
@@ -709,8 +681,8 @@ describe("Tween", () => {
                 ...mp,
                 valueChange: 10,
             };
-            let easeOutQuinticTween: EaseOutQuinticTween =
-                new EaseOutQuinticTween(tp);
+            let easeOutQuinticTween: QuinticTween.EaseOut =
+                new QuinticTween.EaseOut(tp);
             expect(easeOutQuinticTween).toBeDefined();
             let returnedObj = easeOutQuinticTween.getObj();
             expect(returnedObj).toBeDefined();
@@ -744,8 +716,8 @@ describe("Tween", () => {
                 ...mp,
                 valueChange: 10,
             };
-            let easeInOutQuinticTween: EaseInOutQuinticTween =
-                new EaseInOutQuinticTween(tp);
+            let easeInOutQuinticTween: QuinticTween.EaseInOut =
+                new QuinticTween.EaseInOut(tp);
             expect(easeInOutQuinticTween).toBeDefined();
             let returnedObj = easeInOutQuinticTween.getObj();
             expect(returnedObj).toBeDefined();
@@ -780,8 +752,8 @@ describe("Tween", () => {
                 ...mp,
                 valueChange: 10,
             };
-            let easeInSinusoidalTween: EaseInSinusoidalTween =
-                new EaseInSinusoidalTween(tp);
+            let easeInSinusoidalTween: SinusoidalTween.EaseIn =
+                new SinusoidalTween.EaseIn(tp);
             expect(easeInSinusoidalTween).toBeDefined();
             let returnedObj = easeInSinusoidalTween.getObj();
             expect(returnedObj).toBeDefined();
@@ -815,8 +787,8 @@ describe("Tween", () => {
                 ...mp,
                 valueChange: 10,
             };
-            let easeOutSinusoidalTween: EaseOutSinusoidalTween =
-                new EaseOutSinusoidalTween(tp);
+            let easeOutSinusoidalTween: SinusoidalTween.EaseOut =
+                new SinusoidalTween.EaseOut(tp);
             expect(easeOutSinusoidalTween).toBeDefined();
             let returnedObj = easeOutSinusoidalTween.getObj();
             expect(returnedObj).toBeDefined();
@@ -850,8 +822,8 @@ describe("Tween", () => {
                 ...mp,
                 valueChange: 10,
             };
-            let easeInOutSinusoidalTween: EaseInOutSinusoidalTween =
-                new EaseInOutSinusoidalTween(tp);
+            let easeInOutSinusoidalTween: SinusoidalTween.EaseInOut =
+                new SinusoidalTween.EaseInOut(tp);
             expect(easeInOutSinusoidalTween).toBeDefined();
             let returnedObj = easeInOutSinusoidalTween.getObj();
             expect(returnedObj).toBeDefined();
