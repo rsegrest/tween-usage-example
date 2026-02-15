@@ -13,7 +13,8 @@
     "build": "webpack --mode=production",
     "preview": "vite preview",
     "watch": "webpack --watch",
-    "test": "tsc; cross-env NODE_OPTIONS=--experimental-vm-modules npx jest --config ./jest.config.ts"
+    "test": "tsc; cross-env NODE_OPTIONS=--experimental-vm-modules npx jest --config ./jest.config.ts",
+    "heroku-postbuild": "npm run build"
   },
   "devDependencies": {
     "@babel/core": "^7.29.0",
