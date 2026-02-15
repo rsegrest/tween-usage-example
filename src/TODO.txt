@@ -1,2 +1,0 @@
-TODO: Module not found: Error: Package path ./dist/tween/sinusoidal is not exported from package /home/runner/tween-usage-example/node_modules/motion-and-tween (see exports field in /home/runner/tween-usage-example/node_modules/motion-and-tween/package.json)
-
