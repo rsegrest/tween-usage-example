@@ -41,6 +41,7 @@
   "description": "Motion & Tween Example",
   "dependencies": {
     "motion-and-tween": "0.0.11",
-    "p5": "^2.2.1"
+    "p5": "^2.2.1",
+    "serve": "^14.2.5"
   }
 }

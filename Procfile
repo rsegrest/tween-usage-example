@@ -1,1 +1,1 @@
-web: bin/start-nginx -c config/nginx.conf.erb
+web: npx serve -s dist -l $PORT
