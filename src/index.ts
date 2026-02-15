@@ -225,9 +225,9 @@ const sketch = (s: p5) => {
       }
       drawContainer(alignment, rows[rowIndex] + offset, label);
       s.textSize(9);
-      s.text("Ease In", alignment + s.width * 0.005, rows[rowIndex] + secondaryLabelRowsY[index]);
-      s.text("Ease Out", alignment + s.width * 0.005, rows[rowIndex] + secondaryLabelRowsY[index]);
-      s.text("Ease In Out", alignment + s.width * 0.005, rows[rowIndex] + secondaryLabelRowsY[index]);
+      s.text("Ease In", alignment + s.width * 0.005, rows[rowIndex] + secondaryLabelRowsY[0]);
+      s.text("Ease Out", alignment + s.width * 0.005, rows[rowIndex] + secondaryLabelRowsY[1]);
+      s.text("Ease In Out", alignment + s.width * 0.005, rows[rowIndex] + secondaryLabelRowsY[2]);
     })
   }
 
@@ -296,7 +296,7 @@ const sketch = (s: p5) => {
       linearY = row0 - s.height * 0.01;
     }
     const linearTweenLeftColumnProps: TweenChangeProps = createTweenProps(alignment + s.width * 0.01, linearY);
-    const linearTweenRightColumnProps: TweenChangeProps = createTweenProps(alignment + s.width * 0.01, linearY);
+    const linearTweenRightColumnProps: TweenChangeProps = createTweenProps(rightColumnAlignment + s.width * 0.01, linearY);
     linearTweenLeftColumn = new LinearTween(linearTweenLeftColumnProps);
     linearTweenRightColumn = new LinearTween(linearTweenRightColumnProps);
     circularTweenGroup = createTweenGroup((alignment + s.width * 0.01), row1, {
